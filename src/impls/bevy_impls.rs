@@ -269,7 +269,7 @@ impl Inspectable for ClearColor {
     type Attributes = <Color as Inspectable>::Attributes;
 
     fn ui(&mut self, ui: &mut egui::Ui, options: Self::Attributes, context: &mut Context) -> bool {
-        self.0.ui(ui, options, context)
+        self.default_color.ui(ui, options, context)
     }
 }
 
@@ -328,7 +328,7 @@ impl Inspectable for StandardMaterial {
                     ui.label("perceptual_roughness");
                     changed |= self.perceptual_roughness.ui(ui, NumberAttributes::between(0.089, 1.0).with_speed(0.01), context);
                     ui.end_row();
-                    
+
                     ui.label("metallic");
                     changed |= self.metallic.ui(ui, NumberAttributes::normalized().with_speed(0.01), context);
                     ui.end_row();

@@ -60,3 +60,4 @@ required-features = ["bevy/png"]
 name = "world"
 
 [patch.crates-io]
+bevy = { git = "https://github.com/HackerFoo/bevy", branch = "render_to_texture" }
